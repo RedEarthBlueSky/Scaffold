@@ -1,9 +1,14 @@
 import { Platform, StyleSheet } from 'react-native';
 
 const headerStyles = StyleSheet.create({
-  textStyle: {
+  subtitleStyle: {
+    color: '#fff',
+    fontSize: 15,
+    paddingTop: 10,
+  },
+  titleStyle: {
     backgroundColor: '#9ba4b2',
-    fontSize: 20,
+    fontSize: 25,
     fontWeight: 'bold',
   },
   viewStyle: {
