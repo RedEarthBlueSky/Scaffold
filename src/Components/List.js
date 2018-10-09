@@ -1,26 +1,33 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
+import axios from 'axios';
+
 import url from '../config/config';
+import ListItem from './ListItem';
 
 class List extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: null,
+      listItems: [],
     };
   }
-
   componentWillMount() {
-    fetch(url)
-      .then(response => response.json())
-      .then(data => this.setState({ data }));
+    axios.get(url)
+      .then(response => this.setState({ listItems: response.data }));
+  }
+
+  renderListItems() {
+    return this.state.listItems.map(
+      listItem =>
+        <ListItem key={listItem.title} listItem={listItem} />
+    );
   }
 
   render() {
-    console.log(this.state.data);
     return (
       <View>
-        <Text>This is the List</Text>
+        {this.renderListItems()}
       </View>
     );
   }
