@@ -3,12 +3,12 @@ import { Platform, StyleSheet } from 'react-native';
 const headerStyles = StyleSheet.create({
   subtitleStyle: {
     color: '#fff',
-    fontSize: 15,
-    paddingTop: 10,
+    fontSize: 12,
+    paddingTop: 5,
   },
   titleStyle: {
     backgroundColor: '#9ba4b2',
-    fontSize: 25,
+    fontSize: 18,
     fontWeight: 'bold',
   },
   viewStyle: {
@@ -16,7 +16,7 @@ const headerStyles = StyleSheet.create({
     backgroundColor: '#2958a0',
     elevation: 2,
     justifyContent: 'center',
-    padding: 15,
+    padding: 10,
     position: 'relative',
     shadowColor: '#000',
     shadowOffset: {
@@ -25,10 +25,10 @@ const headerStyles = StyleSheet.create({
     shadowOpacity: 0.6,
     ...Platform.select({
       ios: {
-        paddingTop: 25,
+        paddingTop: 20,
       },
       android: {
-        paddingTop: 5,
+        paddingTop: 0,
         backgroundColor: 'blue',
       }
     })
