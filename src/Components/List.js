@@ -1,7 +1,7 @@
+//  Pass data into ListItems
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import axios from 'axios';
-
 import url from '../config/config';
 import ListItem from './ListItem';
 
