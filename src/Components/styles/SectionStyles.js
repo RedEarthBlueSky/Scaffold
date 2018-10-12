@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     flexDirection: 'row',
     justifyContent: 'flex-start',
+    marginTop: 3,
     padding: 5,
     position: 'relative',
   },

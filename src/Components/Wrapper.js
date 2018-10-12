@@ -1,12 +1,15 @@
+//  stying wrapper for ListItem Content
+//  Could be called the List Item Content Wrapper
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+import styles from './styles/ListNodeStyles';
 
-const Wrapper = () => {
+const ItemWrapper = (props) => {
   return (
-    <View>
-        <Text> Wrapper </Text>
+    <View style={styles.containerStyle}>
+      {props.children}
     </View>
   );
 };
 
-export default Wrapper;
+export default ItemWrapper;

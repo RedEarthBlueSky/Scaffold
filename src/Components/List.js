@@ -1,9 +1,9 @@
-//  Pass data into ListItems
+//  Fetch and Pass data into ListItems and render them
 import React, { Component } from 'react';
 import { View } from 'react-native';
 import axios from 'axios';
 import url from '../config/config';
-import ListItem from './ListItem';
+import Item from './Item';
 
 class List extends Component {
   constructor(props) {
@@ -12,6 +12,7 @@ class List extends Component {
       listItems: [],
     };
   }
+
   componentWillMount() {
     axios.get(url)
       .then(response => this.setState({ listItems: response.data }));
@@ -20,7 +21,7 @@ class List extends Component {
   renderListItems() {
     return this.state.listItems.map(
       listItem =>
-        <ListItem key={listItem.title} listItem={listItem} />
+        <Item key={listItem.title} listItem={listItem} />
     );
   }
 
