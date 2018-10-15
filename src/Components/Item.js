@@ -1,7 +1,7 @@
 //  accept props from List to return data and Markup
 //  content within ListNode are passed as props children
 import React from 'react';
-import { Image } from 'react-native';
+import { Image, Linking } from 'react-native';
 import Wrapper from './Wrapper';
 import Section from './Section';
 import Button from './Button';
@@ -9,7 +9,7 @@ import ItemHeader from './ItemHeader';
 import styles from './styles/itemStyles';
 
 const Item = ({ listItem }) => {
-  const { artist, title, image, thumbnail_image } = listItem;
+  const { artist, title, image, thumbnail_image, url } = listItem;
   return (
     <Wrapper>
       <ItemHeader
@@ -23,7 +23,11 @@ const Item = ({ listItem }) => {
           source={{ uri: image }}
         />
       </Section>
-      <Button />
+      <Button
+        message={'React Native Me!'}
+        onPress={() => Linking.openURL(url)}
+        url={url}
+      />
     </Wrapper>
   );
 };

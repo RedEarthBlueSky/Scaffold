@@ -3,14 +3,17 @@ import { Text, TouchableOpacity } from 'react-native';
 import Section from './Section';
 import styles from './styles/buttonStyles';
 
-const Button = () => {
+const Button = (props) => {
+  const { message, onPress } = props;
   return (
     <Section>
       <TouchableOpacity
-        onPress={() => console.log('Pressed!')}
         style={styles.buttonStyle}
+        onPress={onPress}
       >
-        <Text style={styles.textStyle}>React Native Click!</Text>
+        <Text style={styles.textStyle}>
+          {message}
+        </Text>
       </TouchableOpacity>
     </Section>
   );
