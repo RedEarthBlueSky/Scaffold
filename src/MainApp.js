@@ -9,7 +9,7 @@ class MainApp extends Component {
   render() {
 
     return (
-      <View>
+      <View style={{ flex: 1 }}>
         <Header title='Header Title'>
           Header Subtitle Child Prop
         </Header>

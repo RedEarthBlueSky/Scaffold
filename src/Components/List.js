@@ -1,6 +1,6 @@
 //  Fetch and Pass data into ListItems and render them
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { ScrollView } from 'react-native';
 import axios from 'axios';
 import url from '../config/config';
 import Item from './Item';
@@ -27,9 +27,9 @@ class List extends Component {
 
   render() {
     return (
-      <View>
+      <ScrollView>
         {this.renderListItems()}
-      </View>
+      </ScrollView>
     );
   }
 }
