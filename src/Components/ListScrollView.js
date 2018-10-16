@@ -1,11 +1,11 @@
 //  Fetch and Pass data into ListItems and render them
 import React, { Component } from 'react';
-import { ScrollView } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import axios from 'axios';
 import url from '../config/config';
-import Item from './Item';
+import { Header, Item } from './common';
 
-class List extends Component {
+class ListScrollView extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -27,11 +27,17 @@ class List extends Component {
 
   render() {
     return (
-      <ScrollView>
-        {this.renderListItems()}
-      </ScrollView>
+
+      <View>
+        <Header title='List Scroll View Title'>
+          ListScrollView subtitle
+        </Header>
+        <ScrollView>
+          {this.renderListItems()}
+        </ScrollView>
+      </View>
     );
   }
 }
 
-export default List;
+export default ListScrollView;

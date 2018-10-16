@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import headerStyles from './styles/headerStyles';
+import headerStyles from '../styles/headerStyles';
 
 //  refactor title and children from props object
 const Header = ({ title, children }) => {
@@ -18,4 +18,4 @@ const Header = ({ title, children }) => {
   );
 };
 
-export default Header;
+export { Header };

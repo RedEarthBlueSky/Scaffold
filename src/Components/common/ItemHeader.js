@@ -1,18 +1,19 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-import Section from './Section';
-import styles from './styles/itemHeaderStyles';
+// import { Section } from './common';
+import styles from '../styles/itemHeaderStyles';
 
 const ItemHeader = (props) => {
   const { thumbnail_image, artist, title } = props;
   const {
           headerContentStyle,
           headerText,
+          sectionStyle,
           thumbNailStyle,
           thumbNailContainer
         } = styles;
   return (
-    <Section>
+    <View style={sectionStyle}>
       <View style={thumbNailContainer}>
         <Image
           source={{ uri: thumbnail_image }}
@@ -23,8 +24,8 @@ const ItemHeader = (props) => {
         <Text style={headerText}>{artist}</Text>
         <Text>{title}</Text>
       </View>
-    </Section>
+    </View>
   );
 };
 
-export default ItemHeader;
+export { ItemHeader };

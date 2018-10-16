@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text, Styles } from 'react-native';
-
-// import Wrapper from './Components/Wrapper';
-import Header from './Components/Header';
-import List from './Components/List';
+import { View } from 'react-native';
+import ListScrollView from './Components/ListScrollView';
 
 class MainApp extends Component {
   render() {
-
     return (
       <View style={{ flex: 1 }}>
-        <Header title='Header Title'>
-          Header Subtitle Child Prop
-        </Header>
-        <List />
+        <ListScrollView />
       </View>
     );
   }
