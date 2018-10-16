@@ -27,7 +27,6 @@ class ListScrollView extends Component {
 
   render() {
     return (
-
       <View>
         <Header title='List Scroll View Title'>
           ListScrollView subtitle

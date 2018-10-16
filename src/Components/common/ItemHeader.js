@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Image } from 'react-native';
-// import { Section } from './common';
+import { Section } from './index';
 import styles from '../styles/itemHeaderStyles';
 
 const ItemHeader = (props) => {
@@ -13,7 +13,7 @@ const ItemHeader = (props) => {
           thumbNailContainer
         } = styles;
   return (
-    <View style={sectionStyle}>
+    <Section>
       <View style={thumbNailContainer}>
         <Image
           source={{ uri: thumbnail_image }}
@@ -24,7 +24,7 @@ const ItemHeader = (props) => {
         <Text style={headerText}>{artist}</Text>
         <Text>{title}</Text>
       </View>
-    </View>
+    </Section>
   );
 };
 
