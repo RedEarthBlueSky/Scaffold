@@ -1,11 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import styles from './styles/Screens';
+import screenStyles from './styles/screenStyles';
 
-const Home = () => (
-  <View style={styles.viewStyle}>
-    <Text style={styles.textStyle}>This is the Lists Page</Text>
-  </View>
-);
+const Home = () => {
+
+  return (
+    <View style={screenStyles.viewStyle}>
+      <Text style={screenStyles.textStyle}>Home Screen</Text>
+    </View>
+  );
+};
 
 export { Home };

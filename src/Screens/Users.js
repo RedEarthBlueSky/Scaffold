@@ -1,10 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import styles from './styles/Screens';
+import screenStyles from './styles/screenStyles';
+
+const { viewStyle, textStyle } = screenStyles;
 
 const Users = () => (
-  <View style={styles.viewStyle}>
-    <Text style={styles.textStyle}>This is the Lists Page</Text>
+  <View style={viewStyle}>
+    <Text style={textStyle}>Users Screen</Text>
   </View>
 );
 
