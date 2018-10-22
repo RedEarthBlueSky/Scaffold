@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { View, ScrollView } from 'react-native';
 import axios from 'axios';
-import url from '../config/config';
+import Config from '../config/config';
 import { Header, Item } from './common';
 
 class ListScrollView extends Component {
@@ -14,7 +14,7 @@ class ListScrollView extends Component {
   }
 
   componentWillMount() {
-    axios.get(url)
+    axios.get(Config.rallycodingConfig.url)
       .then(response => this.setState({ listItems: response.data }));
   }
 
