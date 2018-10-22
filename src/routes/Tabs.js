@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBottomTabNavigator } from 'react-navigation';
+import { createMaterialTopTabNavigator } from 'react-navigation';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -12,9 +12,18 @@ const tabBarOptionsAll = {
   activeTintColor: 'blue',
   showIcon: true,
   showLabel: true,
+  labelStyle: {
+    fontSize: 10,
+    marginTop: 0,
+  },
+  style: {
+    backgroundColor: 'transparent',
+    borderTopColor: 'grey',
+    borderTopWidth: 1,
+  },
 };
 
-const Tabs = createBottomTabNavigator(
+const Tabs = createMaterialTopTabNavigator(
   {
     Home: {
       screen: Home,
@@ -59,7 +68,7 @@ const Tabs = createBottomTabNavigator(
     ListScrollView: {
       screen: ListScrollView,
       navigationOptions: {
-        title: 'ScrollView',
+        title: 'Scroll',
         tabBarIcon: ({ tintColor }) => (
           <FontAwesome5 name='list' size={20} color={tintColor} />
         ),
@@ -69,6 +78,8 @@ const Tabs = createBottomTabNavigator(
   },
   {
     initialRouteName: 'Home',
+    swipeEnabled: true,
+    tabBarPosition: 'bottom',
   },
 );
 
