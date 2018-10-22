@@ -4,70 +4,66 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-
 import { Home, Lists, Login, Users } from '../Screens';
 import ListScrollView from '../Components/ListScrollView';
+
+const tabBarOptionsAll = {
+  inactiveTintColor: '#000',
+  activeTintColor: 'blue',
+  showIcon: true,
+  showLabel: true,
+};
 
 const Tabs = createBottomTabNavigator(
   {
     Home: {
       screen: Home,
       navigationOptions: {
-        tabBarLabel: '*Home',
+        tabBarLabel: 'Home',
         tabBarIcon: ({ tintColor }) => (
-          <AntDesign name='home' size={20} />
+          <AntDesign name='home' color={tintColor} size={20} />
         ),
-        tabBarOptions: {
-          showIcon: true,
-        },
+        tabBarOptions: tabBarOptionsAll,
       },
     },
     Lists: {
       screen: Lists,
       navigationOptions: {
-        title: '*Lists',
+        title: 'Lists',
         tabBarIcon: ({ tintColor }) => (
-          <Feather name='list' size={20} />
+          <Feather name='list' size={20} color={tintColor} />
         ),
-        tabBarOptions: {
-          showIcon: true,
-        },
+        tabBarOptions: tabBarOptionsAll,
       },
     },
     Login: {
       screen: Login,
       navigationOptions: {
-        title: '*Log',
+        title: 'Login',
         tabBarIcon: ({ tintColor }) => (
-          <AntDesign name='login' size={20} />
+          <AntDesign name='login' size={20} color={tintColor} />
         ),
-        tabBarOptions: {
-          showIcon: true,
-        },
+        tabBarOptions: tabBarOptionsAll,
       }
     },
     Users: {
       screen: Users,
       navigationOptions: {
-        title: '*Users',
+        title: 'Users',
         tabBarIcon: ({ tintColor }) => (
-          <Feather name='users' size={20} />
+          <Feather name='users' size={20} color={tintColor} />
         ),
-        tabBarOptions: {
-          showIcon: true,
-        },
+        tabBarOptions: tabBarOptionsAll,
       },
     },
     ListScrollView: {
       screen: ListScrollView,
       navigationOptions: {
-        title: '*ScrollView',
+        title: 'ScrollView',
         tabBarIcon: ({ tintColor }) => (
-          <FontAwesome5 name='list' size={20} />
+          <FontAwesome5 name='list' size={20} color={tintColor} />
         ),
-        tabBarOptions: {
-          showIcon: true,
-        },
+        tabBarOptions: tabBarOptionsAll,
       }
     },
   },
