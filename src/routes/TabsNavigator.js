@@ -23,15 +23,22 @@ const tabBarOptionsAll = {
   },
 };
 
-const Tabs = createMaterialTopTabNavigator(
+const tabBarIconChoice = (choice, name, size) => {
+  if (choice === 'AntDesign')
+    return ({ tintColor }) => (<AntDesign name={name} color={tintColor} size={size} />);
+  if (choice === 'Feather')
+    return ({ tintColor }) => (<Feather name={name} color={tintColor} size={size} />);
+  if (choice === 'FontAwesome5')
+    return ({ tintColor }) => (<FontAwesome5 name={name} color={tintColor} size={size} />);
+}
+
+const TabsNavigator = createMaterialTopTabNavigator(
   {
     Home: {
       screen: Home,
       navigationOptions: {
         tabBarLabel: 'Home',
-        tabBarIcon: ({ tintColor }) => (
-          <AntDesign name='home' color={tintColor} size={20} />
-        ),
+        tabBarIcon: tabBarIconChoice('AntDesign', 'home', 20),
         tabBarOptions: tabBarOptionsAll,
       },
     },
@@ -39,9 +46,7 @@ const Tabs = createMaterialTopTabNavigator(
       screen: Lists,
       navigationOptions: {
         title: 'Lists',
-        tabBarIcon: ({ tintColor }) => (
-          <Feather name='list' size={20} color={tintColor} />
-        ),
+        tabBarIcon: tabBarIconChoice('Feather', 'list', 20),
         tabBarOptions: tabBarOptionsAll,
       },
     },
@@ -49,9 +54,7 @@ const Tabs = createMaterialTopTabNavigator(
       screen: Login,
       navigationOptions: {
         title: 'Login',
-        tabBarIcon: ({ tintColor }) => (
-          <AntDesign name='login' size={20} color={tintColor} />
-        ),
+        tabBarIcon: tabBarIconChoice('AntDesign', 'login', 20),
         tabBarOptions: tabBarOptionsAll,
       }
     },
@@ -59,9 +62,7 @@ const Tabs = createMaterialTopTabNavigator(
       screen: Users,
       navigationOptions: {
         title: 'Users',
-        tabBarIcon: ({ tintColor }) => (
-          <Feather name='users' size={20} color={tintColor} />
-        ),
+        tabBarIcon: tabBarIconChoice('Feather', 'users', 20),
         tabBarOptions: tabBarOptionsAll,
       },
     },
@@ -69,9 +70,7 @@ const Tabs = createMaterialTopTabNavigator(
       screen: ListScrollView,
       navigationOptions: {
         title: 'Scroll',
-        tabBarIcon: ({ tintColor }) => (
-          <FontAwesome5 name='list' size={20} color={tintColor} />
-        ),
+        tabBarIcon: tabBarIconChoice('FontAwesome5', 'list', 20),
         tabBarOptions: tabBarOptionsAll,
       }
     },
@@ -83,4 +82,4 @@ const Tabs = createMaterialTopTabNavigator(
   },
 );
 
-export default Tabs;
+export default TabsNavigator;
