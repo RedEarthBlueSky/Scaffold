@@ -4,7 +4,7 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-import { Home, Lists, Login, Users } from '../Screens';
+import { HomeScreen, ListsScreen, LoginScreen, UsersScreen } from '../Screens';
 import ListScrollView from '../Components/ListScrollView';
 
 const tabBarOptionsAll = {
@@ -35,7 +35,7 @@ const tabBarIconChoice = (choice, name, size) => {
 const TabsNavigator = createMaterialTopTabNavigator(
   {
     Home: {
-      screen: Home,
+      screen: HomeScreen,
       navigationOptions: {
         tabBarLabel: 'Home',
         tabBarIcon: tabBarIconChoice('AntDesign', 'home', 20),
@@ -43,7 +43,7 @@ const TabsNavigator = createMaterialTopTabNavigator(
       },
     },
     Lists: {
-      screen: Lists,
+      screen: ListsScreen,
       navigationOptions: {
         title: 'Lists',
         tabBarIcon: tabBarIconChoice('Feather', 'list', 20),
@@ -51,7 +51,7 @@ const TabsNavigator = createMaterialTopTabNavigator(
       },
     },
     Login: {
-      screen: Login,
+      screen: LoginScreen,
       navigationOptions: {
         title: 'Login',
         tabBarIcon: tabBarIconChoice('AntDesign', 'login', 20),
@@ -59,14 +59,14 @@ const TabsNavigator = createMaterialTopTabNavigator(
       }
     },
     Users: {
-      screen: Users,
+      screen: UsersScreen,
       navigationOptions: {
         title: 'Users',
         tabBarIcon: tabBarIconChoice('Feather', 'users', 20),
         tabBarOptions: tabBarOptionsAll,
       },
     },
-    ListScrollView: {
+    ListScroll: {
       screen: ListScrollView,
       navigationOptions: {
         title: 'Scroll',

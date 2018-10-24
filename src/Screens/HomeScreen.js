@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import screenStyles from './styles/screenStyles';
 
-const Home = () => {
+const HomeScreen = () => {
 
   return (
     <View style={screenStyles.viewStyle}>
@@ -11,4 +11,4 @@ const Home = () => {
   );
 };
 
-export { Home };
+export { HomeScreen };

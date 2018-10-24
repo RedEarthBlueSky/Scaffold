@@ -4,10 +4,10 @@ import screenStyles from './styles/screenStyles';
 
 const { viewStyle, textStyle } = screenStyles;
 
-const Users = () => (
+const UsersScreen = () => (
   <View style={viewStyle}>
     <Text style={textStyle}>Users Screen</Text>
   </View>
 );
 
-export { Users };
+export { UsersScreen };

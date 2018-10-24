@@ -9,7 +9,7 @@ import {
   View,
 } from 'react-native';
 import { createDrawerNavigator, DrawerItems } from 'react-navigation';
-import { Home, Lists, Login, Users } from '../Screens';
+import { HomeScreen, ListsScreen, LoginScreen, UsersScreen } from '../Screens';
 import ListScrollView from '../Components/ListScrollView';
 
 const DrawerNavigator = () => {
@@ -39,15 +39,28 @@ const CustomDrawerComponent = (props) => {
 
 const AppDrawerNavigator = createDrawerNavigator(
   {
-    Home,
-    Lists,
-    Login,
-    Users,
-    ListScrollView,
+    Home: {
+      screen: HomeScreen,
+    },
+    Lists: {
+      screen: ListsScreen,
+    },
+    Login: {
+      screen: LoginScreen,
+    },
+    Users: {
+      screen: UsersScreen,
+    },
+    ListScroll: {
+      screen: ListScrollView,
+    },
   },
   {
     contentComponent: CustomDrawerComponent,
     drawerBackgroundColor: '#cadbf7',
+    navigationOptions: {
+      title: 'navigation title',
+    }
   }
 );
 
