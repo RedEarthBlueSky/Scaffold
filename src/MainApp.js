@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import NavigationOptions from './routes/NavigationOptions';
+import { StackNavigator } from 'react-navigation';
+import { HomeScreen, ListsScreen, LoginScreen } from './Screens';
 
-class MainApp extends Component {
-  render() {
-    return (
-        <NavigationOptions />
-    );
-  }
-}
+const MainApp = StackNavigator({
+  Home: { screen: HomeScreen },
+  Lists: { screen: ListsScreen },
+  Login: { screen: LoginScreen },
+}, {
+  initialRouteName: 'Home',
+});
 
 export default MainApp;
