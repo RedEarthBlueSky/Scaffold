@@ -1,5 +1,5 @@
 import React from 'react';
-import { createMaterialTopTabNavigator } from 'react-navigation';
+import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -82,4 +82,4 @@ const TabsNavigator = createMaterialTopTabNavigator(
   },
 );
 
-export default TabsNavigator;
+export default createStackNavigator({ TabsNavigator }, { headerMode: 'none' });
