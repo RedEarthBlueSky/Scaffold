@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import screenStyles from './styles/screenStyles';
 
-const { viewStyle, textStyle } = screenStyles;
+const { viewStyle } = screenStyles;
 
 const items = [
   { name: 'One', subject: 'People' },
@@ -13,10 +13,6 @@ const items = [
 
 class ItemList extends Component {
 
-  static navigationOptions = {
-    title: 'Stack'
-  };
-
   renderItem = (item, i) => {
     return (
       <TouchableOpacity
@@ -24,7 +20,7 @@ class ItemList extends Component {
         // style={styles.item}
         onPress={() =>
           this.props.navigation.navigate('Item',
-          { title: item.name, what: item.subject }
+          { item: item.name, subject: item.subject }
         )}
       >
         <Text>{item.name} {item.subject}</Text>

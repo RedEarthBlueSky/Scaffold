@@ -7,7 +7,7 @@ const { viewStyle, textStyle } = screenStyles;
 const TabA = () => {
   return (
     <View style={viewStyle}>
-      <Text style={textStyle}>TabA Tab Screen</Text>
+      <Text style={textStyle}>TabA Screen</Text>
     </View>
   );
 };
