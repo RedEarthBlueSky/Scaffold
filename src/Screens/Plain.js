@@ -5,7 +5,7 @@ import screenStyles from './styles/screenStyles';
 const { viewStyle, textStyle } = screenStyles;
 
 class Plain extends Component {
-
+  
   render() {
    console.log(this.props.navigation.state);
     return (

@@ -7,6 +7,19 @@ from 'react-navigation';
 
 import { ItemList, Item, TabA, TabB, TabC, Plain } from '../Screens';
 
+const OpenDrawer = (props) => {
+  return (
+    <View>
+      <TouchableOpacity
+        title='Drawer'
+        onPress={() => props.navigation.openDrawer()}
+      >
+        <Text>Drawer</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
 //  Stack Navigator
 export const Stack = StackNavigator({
   ItemList: { screen: ItemList },
@@ -25,6 +38,7 @@ export const Tabs = TabNavigator({
 }, {
   order: ['Stack', 'TabA', 'TabB', 'TabC', 'Plain'],
   animationEnabled: true,
+  swipeEnabled: true,
 });
 
 //  Drawer Navigator

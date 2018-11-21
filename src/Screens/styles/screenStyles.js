@@ -1,6 +1,10 @@
 import { StyleSheet } from 'react-native';
 
-const screenStyles = StyleSheet.create({
+const styles = StyleSheet.create({
+  buttonWrapper: {
+    marginBottom: 0,
+    marginRight: 10,
+  },
   viewStyle: {
     display: 'flex',
     flex: 1,
@@ -13,4 +17,4 @@ const screenStyles = StyleSheet.create({
   }
 });
 
-export default screenStyles;
+export default styles;

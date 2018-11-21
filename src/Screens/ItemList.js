@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Button } from 'react-native';
-import screenStyles from './styles/screenStyles';
+import { View, Text, TouchableOpacity } from 'react-native';
+import styles from './styles/screenStyles';
 
-const { viewStyle } = screenStyles;
+import OpenDrawerButton from '../routes/OpenDrawerButton';
+
+const { viewStyle } = styles;
 
 const items = [
   { name: 'One', subject: 'People' },
@@ -11,26 +13,13 @@ const items = [
   { name: 'Four', subject: 'Waydehay' },
 ];
 
-const OpenDrawer = (props) => {
-  return (
-    <View>
-      <TouchableOpacity
-        title='Drawer'
-        onPress={() => props.navigation.openDrawer()}
-      >
-        <Text>Drawer</Text>
-      </TouchableOpacity>
-    </View>
-  );
-};
-
 class ItemList extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
       title: `Stack: ${navigation.state.routeName}`,
-      headerLeft: <OpenDrawer navigation={navigation} />
+      headerRight: <OpenDrawerButton navigation={navigation} />,
     };
-  }
+  };
 
   toggleDrawerButton() {
     console.log('toggleDrawer');

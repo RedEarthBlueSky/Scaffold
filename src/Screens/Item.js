@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import screenStyles from './styles/screenStyles';
+import OpenDrawerButton from '../routes/OpenDrawerButton';
 
 const { viewStyle, textStyle } = screenStyles;
 
@@ -11,6 +12,7 @@ class Item extends Component {
     const subject = navigation.getParam('subject', 'Error: default subject');
     return {
       title: `Screen ${itemNumber}: ${subject}`,
+      headerRight: <OpenDrawerButton navigation={navigation} />,
     };
   }
 
