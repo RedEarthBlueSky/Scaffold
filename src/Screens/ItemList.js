@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Button } from 'react-native';
 import screenStyles from './styles/screenStyles';
 
 const { viewStyle } = screenStyles;
@@ -13,6 +13,17 @@ const items = [
 
 class ItemList extends Component {
 
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: `Main Stack Screen: ${navigation.state.routeName}`,
+      // headerLeft: 
+    };
+  }
+
+  toggleDrawerButton() {
+    console.log('toggleDrawer');
+  }
+
   renderItem = (item, i) => {
     return (
       <TouchableOpacity
@@ -23,7 +34,7 @@ class ItemList extends Component {
           { item: item.name, subject: item.subject }
         )}
       >
-        <Text>{item.name} {item.subject}</Text>
+        <Text>Screen {item.name}: {item.subject}</Text>
       </TouchableOpacity>
     );
   }

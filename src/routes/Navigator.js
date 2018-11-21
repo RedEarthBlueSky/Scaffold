@@ -21,8 +21,9 @@ export const Tabs = TabNavigator({
   TabA: { screen: TabA },
   TabB: { screen: TabB },
   TabC: { screen: TabC },
+  Plain: { screen: Plain },
 }, {
-  order: ['Stack', 'TabA', 'TabB', 'TabC'],
+  order: ['Stack', 'TabA', 'TabB', 'TabC', 'Plain'],
   animationEnabled: true,
 });
 

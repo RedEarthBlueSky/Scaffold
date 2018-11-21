@@ -8,7 +8,7 @@ class Item extends Component {
 
   static navigationOptions = ({ navigation }) => {
     const itemNumber = navigation.getParam('item', 'error: default item');
-    const subject = navigation.getParam('subject', 'Error: default subject')
+    const subject = navigation.getParam('subject', 'Error: default subject');
     return {
       title: `Screen ${itemNumber}: ${subject}`,
     };
