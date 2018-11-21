@@ -11,12 +11,24 @@ const items = [
   { name: 'Four', subject: 'Waydehay' },
 ];
 
-class ItemList extends Component {
+const OpenDrawer = (props) => {
+  return (
+    <View>
+      <TouchableOpacity
+        title='Drawer'
+        onPress={() => props.navigation.openDrawer()}
+      >
+        <Text>Drawer</Text>
+      </TouchableOpacity>
+    </View>
+  );
+};
 
+class ItemList extends Component {
   static navigationOptions = ({ navigation }) => {
     return {
-      title: `Main Stack Screen: ${navigation.state.routeName}`,
-      // headerLeft: 
+      title: `Stack: ${navigation.state.routeName}`,
+      headerLeft: <OpenDrawer navigation={navigation} />
     };
   }
 
